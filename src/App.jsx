@@ -18,10 +18,49 @@ import hikvision from "./assets/hikvision.png";
 import dahua from "./assets/dahua.png";
 import siemens from "./assets/siemens.jpg";
 
-import { Phone } from "lucide-react";
+import { Phone
+ } from "lucide-react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube
+} from "react-icons/fa";
 
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function MultiserviciosPyGSystem() {
+
+  const form = useRef();
+  const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs
+    .sendForm(
+      "service_ikt8xwh",
+      "template_oodlx2x",
+      form.current,
+      "bFqXm877MVnHPQ6Is"
+    )
+    .then(
+      () => {
+        alert("Mensaje enviado correctamente");
+      },
+      (error) => {
+        alert("Error al enviar el mensaje");
+        console.log(error.text);
+      }
+    );
+};
   const carouselItems = [
     {
       title: "Cableado Estructurado",
@@ -131,18 +170,49 @@ export default function MultiserviciosPyGSystem() {
       </header>
 
       <main className="max-w-[1500px] mx-auto px-8 py-8">
-        <section id="inicio" className="bg-white rounded-[24px] shadow-lg p-6 mb-14 border border-[#e4e8ef]">
-          <div className="grid md:grid-cols-5 gap-3 items-stretch">
-            {carouselItems.map((item, index) => (
-              <div key={index} className="overflow-hidden rounded-xl shadow-lg border border-slate-200 bg-white hover:scale-105 transition-all duration-300">
-                <img src={item.image} alt={item.title} className="h-[210px] w-full object-cover" />
-                <div className="bg-[#005bbb] text-white text-center font-semibold py-3 px-2 text-[22px] leading-tight min-h-[88px] flex items-center justify-center">
-                  {item.title}
-                </div>
-              </div>
-            ))}
+        <section
+  id="inicio"
+  className="bg-white rounded-[24px] shadow-lg p-6 mb-14 border border-[#e4e8ef]"
+>
+  <Swiper
+    modules={[Autoplay, Navigation, Pagination]}
+    spaceBetween={20}
+    slidesPerView={1}
+    navigation
+    pagination={{ clickable: true }}
+    autoplay={{
+      delay: 3500,
+      disableOnInteraction: false,
+    }}
+    loop={true}
+    breakpoints={{
+      768: {
+        slidesPerView: 2,
+      },
+      1200: {
+        slidesPerView: 3,
+      },
+    }}
+  >
+    {carouselItems.map((item, index) => (
+      <SwiperSlide key={index}>
+        <div className="overflow-hidden rounded-2xl shadow-xl border border-slate-200 bg-white">
+
+          <img
+            src={item.image}
+            alt={item.title}
+            className="h-[250px] w-full object-cover"
+          />
+
+          <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center font-bold py-6 px-4 text-3xl leading-tight min-h-[120px] flex items-center justify-center">
+            {item.title}
           </div>
-        </section>
+
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</section>
 
         <section id="nosotros" className="py-10">
           <div className="grid lg:grid-cols-2 gap-14 items-center mb-14">
@@ -242,20 +312,44 @@ export default function MultiserviciosPyGSystem() {
             </div>
 
             <div className="bg-white p-10 rounded-[24px] shadow-md border border-[#e6eaf0]">
-              <form className="space-y-6">
+            <form
+  ref={form}
+  onSubmit={sendEmail}
+  className="space-y-6"
+>
                 <div className="grid md:grid-cols-2 gap-5">
-                  <input type="text" placeholder="Nombre completo" className="border border-slate-300 rounded-xl p-5 text-lg" />
-                  <input type="email" placeholder="Correo electrónico" className="border border-slate-300 rounded-xl p-5 text-lg" />
+                 <input
+                 type="text"
+                 name="nombre"
+                 placeholder="Nombre completo"
+                className="border border-slate-300 rounded-xl p-5 text-lg"
+/>
+                  <input type="email" 
+                  name="correo"
+                  placeholder="Correo electrónico" 
+                  className="border border-slate-300 rounded-xl p-5 text-lg" />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-5">
-                  <input type="text" placeholder="Teléfono" className="border border-slate-300 rounded-xl p-5 text-lg" />
-                  <input type="text" placeholder="Asunto" className="border border-slate-300 rounded-xl p-5 text-lg" />
+                  <input type="text"
+                  name="telefono"
+                   placeholder="Teléfono"
+                    className="border border-slate-300 rounded-xl p-5 text-lg" />
+
+                  <input type="text" 
+                  name="asunto"
+                  placeholder="Asunto" 
+                  className="border border-slate-300 rounded-xl p-5 text-lg" />
                 </div>
 
-                <textarea rows="6" placeholder="Mensaje" className="w-full border border-slate-300 rounded-xl p-5 text-lg"></textarea>
+                <textarea 
+                name="mensaje"
+                rows="6" 
+                placeholder="Mensaje" 
+                className="w-full border border-slate-300 rounded-xl p-5 text-lg"></textarea>
 
-                <button className="bg-blue-700 hover:bg-blue-800 transition text-white px-10 py-5 rounded-xl text-xl font-bold shadow-lg">
+                <button type= "submit"
+                className="bg-blue-700 hover:bg-blue-800 transition text-white px-10 py-5 rounded-xl text-xl font-bold shadow-lg">
                   ENVIAR CONSULTA
                 </button>
               </form>
@@ -288,15 +382,98 @@ export default function MultiserviciosPyGSystem() {
         </section>
       </main>
 
-      <footer className="bg-[#003f7d] text-white py-10 text-center">
-        <p className="text-lg">© 2026 Multiservicios PyG System. Todos los derechos reservados.</p>
-        
-        <a
-  href="https://wa.me/51966676543"
-  target="_blank"
-  className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-5 rounded-full shadow-2xl z-50 text-3xl"
->
-  💬
+      <footer className="bg-[#003f7d] text-white pt-14 pb-10 mt-10">
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="grid md:grid-cols-3 gap-10 items-start">
+
+      {/* Empresa */}
+      <div>
+        <h3 className="text-3xl font-bold mb-4">
+          Multiservicios PyG System
+        </h3>
+
+        <p className="text-slate-200 text-lg leading-relaxed">
+          Especialistas en cableado estructurado,
+          CCTV, redes, sistemas contra incendios
+          y soluciones tecnológicas.
+        </p>
+      </div>
+
+      {/* Enlaces */}
+      <div>
+        <h3 className="text-2xl font-bold mb-5">
+          Enlaces rápidos
+        </h3>
+
+        <div className="flex flex-col gap-3 text-lg">
+          <a href="#inicio" className="hover:text-blue-300 transition">
+            Inicio
+          </a>
+
+          <a href="#nosotros" className="hover:text-blue-300 transition">
+            Nosotros
+          </a>
+
+          <a href="#servicios" className="hover:text-blue-300 transition">
+            Servicios
+          </a>
+
+          <a href="#contacto" className="hover:text-blue-300 transition">
+            Contacto
+          </a>
+        </div>
+      </div>
+
+      {/* Redes Sociales */}
+      <div>
+        <h3 className="text-2xl font-bold mb-5">
+          Síguenos
+        </h3>
+
+        <div className="flex gap-5">
+
+          <a
+            href="https://www.facebook.com/MULTISERVISPYGSYSTEMTPP"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/10 hover:bg-blue-600 transition p-4 rounded-full"
+          >
+            <FaFacebookF className="w-7 h-7" />
+          </a>
+
+          <a
+            href="https://www.instagram.com/multiserviciospygsystem/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/10 hover:bg-pink-500 transition p-4 rounded-full"
+          >
+            <FaInstagram className="w-7 h-7" />
+          </a>
+
+          
+
+          
+
+        </div>
+      </div>
+    </div>
+
+    {/* Línea divisora */}
+    <div className="border-t border-white/20 mt-12 pt-6 text-center text-slate-300">
+      © 2026 Multiservicios PyG System. Todos los derechos reservados.
+    </div>
+  </div>
+
+  {/* Botón flotante WhatsApp */}
+  <a
+    href="https://wa.me/51966676543"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-5 rounded-full shadow-2xl z-50 text-3xl animate-bounce"
+    aria-label="WhatsApp"
+  >
+    💬
 </a>
       </footer>
     </div>
