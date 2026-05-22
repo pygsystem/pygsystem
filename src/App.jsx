@@ -299,7 +299,11 @@ const brands = [
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-[20px] overflow-hidden shadow-md border border-[#e6eaf0] hover:-translate-y-3 hover:shadow-2xl transition-all duration-300">
-                <img src={service.image} alt={service.title} className="w-full h-[240px] object-cover" />
+                <img
+  src={service.image}
+  alt={service.title}
+  className="w-full h-[220px] md:h-[240px] object-contain bg-white p-2"
+/>
 
                 <div className="p-8">
                   <h3 className="text-2xl md:text-[34px] font-bold text-[#005bbb] mb-5 leading-tight break-words">
