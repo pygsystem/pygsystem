@@ -18,6 +18,15 @@ import servicios from "./assets/servicios.png";
 import hikvision from "./assets/hikvision.png";
 import dahua from "./assets/dahua.png";
 import siemens from "./assets/siemens.jpg";
+import cisco from "./assets/cisco.png";
+import eset from "./assets/eset.png";
+import fortinet from "./assets/fortinet.png";
+import hp from "./assets/hp.png";
+import huawei from "./assets/huawei.png";
+import ibernex from "./assets/ibernex.png";
+import simplex from "./assets/simplex.png";
+import tplink from "./assets/tplink.png";
+import ubiquiti from "./assets/ubiquiti.png";
 
 import { Phone
  } from "lucide-react";
@@ -150,7 +159,21 @@ export default function MultiserviciosPyGSystem() {
       ]
     }
   ];
+const brands = [
+  hikvision,
+  dahua,
+  siemens,
+  cisco,
+  eset,
+  fortinet,
+  hp,
+  huawei,
+  ibernex,
+  simplex,
+  tplink,
+  ubiquiti,
 
+];
   return (
     <div className="bg-[#f4f7fb] text-slate-800 min-h-screen font-sans overflow-x-hidden">
       <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -370,25 +393,50 @@ export default function MultiserviciosPyGSystem() {
         <section className="py-16 text-center">
           <h2 className="text-5xl font-extrabold text-blue-700 mb-14">TRABAJAMOS CON LAS MEJORES MARCAS</h2>
 
-          <div className="grid md:grid-cols-3 gap-10 items-center">
-            <img
-              src={hikvision}
-              alt="Hikvision"
-              className="h-20 mx-auto object-contain"
-            />
+          <Swiper
+  modules={[Autoplay]}
+  spaceBetween={30}
+  slidesPerView={2}
+  autoplay={{
+    delay: 2000,
+    disableOnInteraction: false,
+  }}
+  loop={true}
+  breakpoints={{
+    768: {
+      slidesPerView: 3,
+    },
+    1200: {
+      slidesPerView: 5,
+    },
+  }}
+>
+  {brands.map((brand, index) => (
+  <SwiperSlide key={index}>
+    <div className="flex items-center justify-center bg-white rounded-2xl shadow-md p-6 h-[140px]">
 
-            <img
-              src={dahua}
-              alt="Dahua"
-              className="h-20 mx-auto object-contain"
-            />
+      <img
+        src={brand}
+        alt="Marca"
+        className="max-h-[80px] grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+      />
 
-            <img
-              src={siemens}
-              alt="Siemens"
-              className="h-20 mx-auto object-contain"
-            />
-          </div>
+    </div>
+  </SwiperSlide>
+))} => (
+    <SwiperSlide key={index}>
+      <div className="flex items-center justify-center bg-white rounded-2xl shadow-md p-6 h-[140px]">
+
+        <img
+          src={brand}
+          alt="Marca"
+          className="max-h-[80px] object-contain hover:scale-110 transition duration-300"
+        />
+
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
         </section>
       </main>
 
