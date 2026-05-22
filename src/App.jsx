@@ -302,9 +302,9 @@ const brands = [
                 <img src={service.image} alt={service.title} className="w-full h-[240px] object-cover" />
 
                 <div className="p-8">
-                  <h3 className="text-2xl md:text-[34px] font-bold text-[#005bbb] mb-5 leading-tight">
-                    {service.title}
-                  </h3>
+                  <h3 className="text-2xl md:text-[34px] font-bold text-[#005bbb] mb-5 leading-tight break-words">
+  {service.title}
+</h3>
 
                   <ul className="space-y-3 text-[19px] text-slate-600 leading-relaxed">
                     {service.items.map((item, idx) => (
