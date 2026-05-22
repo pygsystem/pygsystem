@@ -328,8 +328,8 @@ const brands = [
 
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-8">
-              <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-200">
-                <h3 className="text-4xl font-bold mb-4 flex items-center gap-3">
+              <div className="bg-white p-5 md:p-8 rounded-3xl shadow-lg border border-slate-200 overflow-hidden">
+                <h3 className="text-2xl md:text-4xl font-bold mb-4 flex items-center gap-3 break-all">
 
   <Phone className="text-green-500 w-10 h-10" />
 
@@ -339,13 +339,13 @@ const brands = [
                 <p className="text-2xl text-slate-600">Llámanos o escríbenos al Whatsapp</p>
               </div>
 
-              <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-200">
-                <h3 className="text-3xl font-bold text-blue-700 mb-4">pygsystemweb@gmail.com</h3>
+              <div className="bg-white p-5 md:p-8 rounded-3xl shadow-lg border border-slate-200 overflow-hidden">
+                <h3 className="text-xl md:text-3xl font-bold text-blue-700 mb-4 break-all">pygsystemweb@gmail.com</h3>
                 <p className="text-2xl text-slate-600">Envíanos un correo</p>
               </div>
             </div>
 
-            <div className="bg-white p-10 rounded-[24px] shadow-md border border-[#e6eaf0]">
+            <div className="bg-white p-5 md:p-10 rounded-[24px] shadow-md border border-[#e6eaf0] overflow-hidden">
             <form
   ref={form}
   onSubmit={sendEmail}
@@ -356,34 +356,34 @@ const brands = [
                  type="text"
                  name="nombre"
                  placeholder="Nombre completo"
-                className="border border-slate-300 rounded-xl p-5 text-lg"
+                className="w-full border border-slate-300 rounded-xl p-4 text-base md:text-lg"
 />
                   <input type="email" 
                   name="correo"
                   placeholder="Correo electrónico" 
-                  className="border border-slate-300 rounded-xl p-5 text-lg" />
+                  className="w-full border border-slate-300 rounded-xl p-4 text-base md:text-lg" />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-5">
                   <input type="text"
                   name="telefono"
                    placeholder="Teléfono"
-                    className="border border-slate-300 rounded-xl p-5 text-lg" />
+                    className="w-full border border-slate-300 rounded-xl p-4 text-base md:text-lg" />
 
                   <input type="text" 
                   name="asunto"
                   placeholder="Asunto" 
-                  className="border border-slate-300 rounded-xl p-5 text-lg" />
+                  className="w-full border border-slate-300 rounded-xl p-4 text-base md:text-lg" />
                 </div>
 
                 <textarea 
                 name="mensaje"
                 rows="6" 
                 placeholder="Mensaje" 
-                className="w-full border border-slate-300 rounded-xl p-5 text-lg"></textarea>
+                className="w-full border border-slate-300 rounded-xl p-4 text-base md:text-lg"></textarea>
 
                 <button type= "submit"
-                className="bg-blue-700 hover:bg-blue-800 transition text-white px-10 py-5 rounded-xl text-xl font-bold shadow-lg">
+                className="w-full md:w-auto bg-blue-700 hover:bg-blue-800 transition text-white px-6 md:px-10 py-4 rounded-xl text-lg md:text-xl font-bold shadow-lg">
                   ENVIAR CONSULTA
                 </button>
               </form>
