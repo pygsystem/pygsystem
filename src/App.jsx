@@ -9,9 +9,10 @@ import carrusel5 from "./assets/carrusel5.jpg";
 import servicio1 from "./assets/servicio1.webp";
 import servicio2 from "./assets/servicio2.jpg";
 import servicio3 from "./assets/servicio3.webp";
-import servicio4 from "./assets/servicio4.webpn";
+import servicio4 from "./assets/servicio4.png";
 import servicio5 from "./assets/servicio5.jpg";
 import servicio6 from "./assets/servicio6.png";
+import servicio7 from "./assets/servicio6.png";
 import servicios from "./assets/servicios.png";
 
 import hikvision from "./assets/hikvision.png";
@@ -127,6 +128,15 @@ export default function MultiserviciosPyGSystem() {
         "Instalación de sistema contra robos",
         "Instalación de sistema para detección de incendios",
         "Implementación de sistemas para llamado de enfermeras"
+      ]
+    },
+    {
+      title: "DISEÑO DE SOFTWARE",
+      image: servicio7,
+      items: [
+        "Sistema de facturación electrónica para distintos rubros",
+        "Diseño de páginas web",
+        "Diseño de aplicaciones"
       ]
     },
     {
