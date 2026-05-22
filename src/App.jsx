@@ -255,7 +255,8 @@ const brands = [
               <div className="w-20 h-1 bg-blue-700 mb-8 rounded-full"></div>
 
               <p className="text-2xl text-slate-600 leading-relaxed">
-                Somos una empresa dedicada a dar soluciones en el rubro de TI, con los mejores estándares para el diseño e implementación de proyectos en negocios, edificaciones públicas y privadas, nuestro personal cuenta con una amplia experiencia en el rubro.
+                Somos una empresa dedicada a dar soluciones en el rubro de TIC, con los mejores estándares para el diseño e implementación de proyectos en empresas, edificaciones , entidades públicas y privadas, nuestro personal 
+                cuenta con una amplia experiencia en el rubro de TIC.
               </p>
             </div>
 
