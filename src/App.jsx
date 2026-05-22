@@ -28,8 +28,7 @@ import simplex from "./assets/simplex.png";
 import tplink from "./assets/tplink.png";
 import ubiquiti from "./assets/ubiquiti.png";
 
-import { Phone
- } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
 import {
   FaFacebookF,
   FaInstagram,
@@ -52,6 +51,7 @@ export default function MultiserviciosPyGSystem() {
 
   const form = useRef();
   const [selectedService, setSelectedService] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
   const sendEmail = (e) => {
   e.preventDefault();
 
@@ -178,6 +178,64 @@ const brands = [
   return (
     <div className="bg-[#f4f7fb] text-slate-800 min-h-screen font-sans overflow-x-hidden">
       <header className="bg-white shadow-sm sticky top-0 z-50">
+        {menuOpen && (
+  <div
+    onClick={() => setMenuOpen(false)}
+    className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex justify-center items-center p-6"
+  >
+
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className="bg-white/90 backdrop-blur-xl w-full max-w-sm rounded-3xl p-8 shadow-2xl relative animate-fadeIn"
+    >
+
+      {/* Botón cerrar */}
+      <button
+        onClick={() => setMenuOpen(false)}
+        className="absolute top-4 right-4 bg-red-500 hover:bg-red-600 text-white rounded-full p-2"
+      >
+        <X className="w-6 h-6" />
+      </button>
+
+      {/* Menú */}
+      <div className="flex flex-col gap-6 mt-8 text-center">
+
+        <a
+          href="#inicio"
+          onClick={() => setMenuOpen(false)}
+          className="text-2xl font-bold text-blue-700 hover:text-blue-900 transition"
+        >
+          Inicio
+        </a>
+
+        <a
+          href="#nosotros"
+          onClick={() => setMenuOpen(false)}
+          className="text-2xl font-bold text-blue-700 hover:text-blue-900 transition"
+        >
+          Nosotros
+        </a>
+
+        <a
+          href="#servicios"
+          onClick={() => setMenuOpen(false)}
+          className="text-2xl font-bold text-blue-700 hover:text-blue-900 transition"
+        >
+          Servicios
+        </a>
+
+        <a
+          href="#contacto"
+          onClick={() => setMenuOpen(false)}
+          className="text-2xl font-bold text-blue-700 hover:text-blue-900 transition"
+        >
+          Contacto
+        </a>
+
+      </div>
+    </div>
+  </div>
+)}
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <img
@@ -193,7 +251,12 @@ const brands = [
               <a href="#contacto" className="hover:text-blue-700 transition-all duration-300">Contáctenos</a>
             </nav>
           </div>
-
+<button
+  onClick={() => setMenuOpen(true)}
+  className="md:hidden bg-blue-700 text-white p-3 rounded-xl shadow-lg"
+>
+  <Menu className="w-8 h-8" />
+</button>
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-8 py-4 rounded-full text-xl font-semibold shadow-lg flex items-center gap-3">
 
   <Phone className="text-green-300 w-8 h-8" />
