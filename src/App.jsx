@@ -256,7 +256,7 @@ const brands = [
               <div className="w-full overflow-hidden"></div>
 
               <p className="text-base md:text-2xl text-slate-600 leading-relaxed text-left normal-case">
-  Somos una empresa dedicada a dar soluciones en el rubro de TIC, con los mejores estándares para el diseño e implementación de proyectos en empresas, edificaciones y entidades públicas y privadas, nuestro personal cuenta con una amplia experiencia en el rubro de TIC.
+  Somos una empresa dedicada a dar soluciones en el rubro de TIC, con los mejores estándares para el diseño e implementación de proyectos en empresas, edificaciones y entidades públicas y privadas, contamos con una amplia experiencia en el rubro de TIC.
 </p>
             </div>
 
