@@ -400,7 +400,9 @@ const brands = [
   autoplay={{
     delay: 2000,
     disableOnInteraction: false,
+    pauseOnMouseEnter: false,
   }}
+  speed={1500}
   loop={true}
   breakpoints={{
     768: {
@@ -412,18 +414,6 @@ const brands = [
   }}
 >
   {brands.map((brand, index) => (
-  <SwiperSlide key={index}>
-    <div className="flex items-center justify-center bg-white rounded-2xl shadow-md p-6 h-[140px]">
-
-      <img
-        src={brand}
-        alt="Marca"
-        className="max-h-[80px] grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-      />
-
-    </div>
-  </SwiperSlide>
-))} => (
     <SwiperSlide key={index}>
       <div className="flex items-center justify-center bg-white rounded-2xl shadow-md p-6 h-[140px]">
 
