@@ -237,7 +237,7 @@ const brands = [
             className="h-[250px] w-full object-cover"
           />
 
-          <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center font-bold py-6 px-4 text-3xl leading-tight min-h-[120px] flex items-center justify-center">
+          <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center font-bold p-6 px-4 text-3xl leading-tight min-h-[120px] flex items-center justify-center">
             {item.title}
           </div>
 
@@ -251,7 +251,7 @@ const brands = [
           <div className="grid lg:grid-cols-2 gap-14 items-center mb-14">
             <div>
               <h4 className="text-blue-700 uppercase font-bold tracking-widest mb-4">Nosotros</h4>
-              <h2 className="text-[64px] font-extrabold mb-8 text-[#1f2d3d]">¿Quiénes somos?</h2>
+              <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-[#1f2d3d]">¿Quiénes somos?</h2>
               <div className="w-20 h-1 bg-blue-700 mb-8 rounded-full"></div>
 
               <p className="text-2xl text-slate-600 leading-relaxed">
@@ -279,11 +279,11 @@ const brands = [
             <div className="bg-white rounded-3xl p-10 shadow-lg border border-slate-200">
               <h3 className="text-4xl font-bold text-blue-700 mb-8">Valores</h3>
 
-              <div className="grid grid-cols-2 gap-6 text-center">
-                <div className="bg-blue-50 rounded-2xl py-6 font-semibold text-xl">Responsabilidad</div>
-                <div className="bg-blue-50 rounded-2xl py-6 font-semibold text-xl">Integridad</div>
-                <div className="bg-blue-50 rounded-2xl py-6 font-semibold text-xl">Ética</div>
-                <div className="bg-blue-50 rounded-2xl py-6 font-semibold text-xl">Trabajo en equipo</div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-center">
+                <div className="bg-blue-50 rounded-2xl p-6 font-semibold text-xl">Responsabilidad</div>
+                <div className="bg-blue-50 rounded-2xl p-6 font-semibold text-xl">Integridad</div>
+                <div className="bg-blue-50 rounded-2xl p-6 font-semibold text-xl">Ética</div>
+                <div className="bg-blue-50 rounded-2xl p-6 font-semibold text-xl">Trabajo en equipo</div>
               </div>
             </div>
           </div>
@@ -291,7 +291,7 @@ const brands = [
 
         <section id="servicios" className="py-20">
           <div className="text-center mb-14">
-            <h2 className="text-5xl font-extrabold text-blue-700">NUESTROS SERVICIOS</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-blue-700">NUESTROS SERVICIOS</h2>
             <div className="w-28 h-1 bg-blue-700 mx-auto mt-5 rounded-full"></div>
           </div>
 
@@ -321,7 +321,7 @@ const brands = [
 
         <section id="contacto" className="py-20">
           <div className="text-center mb-14">
-            <h2 className="text-5xl font-extrabold text-blue-700">CONTÁCTENOS</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-blue-700">CONTÁCTENOS</h2>
             <div className="w-28 h-1 bg-blue-700 mx-auto mt-5 rounded-full"></div>
           </div>
 
@@ -391,7 +391,7 @@ const brands = [
         </section>
 
         <section className="py-16 text-center">
-          <h2 className="text-5xl font-extrabold text-blue-700 mb-14">TRABAJAMOS CON LAS MEJORES MARCAS</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-blue-700 mb-14">TRABAJAMOS CON LAS MEJORES MARCAS</h2>
 
           <Swiper
   modules={[Autoplay]}
