@@ -235,7 +235,7 @@ const brands = [
           <img
             src={item.image}
             alt={item.title}
-            className="h-[250px] w-full object-contain bg-slate-100"
+            className="w-full h-[200px] md:h-[320px] lg:h-[420px] object-contain bg-slate-100"
           />
 
           <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center font-bold p-6 px-4 text-3xl leading-tight min-h-[120px] flex items-center justify-center">
@@ -439,12 +439,15 @@ const brands = [
 </Swiper>
         </section>
         {selectedService && (
-  <div onClick={() => setSelectedService(null)}
-   className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-    
+   <div
+    onClick={() => setSelectedService(null)}
+    className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+  >
 
-    <div onClick={(e) => e.stopPropagation()} 
-    className="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative animate-fadeIn">
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className="bg-white rounded-3xl w-full max-w-[95%] md:max-w-2xl lg:max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl relative"
+    >
 
       {/* Botón cerrar */}
       <button
@@ -458,17 +461,17 @@ const brands = [
       <img
         src={selectedService.image}
         alt={selectedService.title}
-        className="w-full h-[250px] md:h-[400px] object-contain bg-slate-100"
+        className="w-full h-[200px] md:h-[320px] lg:h-[420px] object-contain bg-slate-100"
       />
 
       {/* Contenido */}
-      <div className="p-6 md:p-10">
+      <div className="p-4 md:p-8">
 
-        <h2 className="text-2xl md:text-4xl font-extrabold text-blue-700 mb-6">
+        <h2 className="text-xl md:text-3xl lg:text-4xl font-extrabold text-blue-700 mb-4 break-words">
           {selectedService.title}
         </h2>
 
-        <ul className="space-y-4 text-base md:text-xl text-slate-700 leading-relaxed">
+        <ul className="space-y-3 text-sm md:text-lg lg:text-xl text-slate-700 leading-relaxed">
           {selectedService.items.map((item, idx) => (
             <li key={idx} className="flex gap-3">
               <span className="text-blue-700 font-bold">•</span>
