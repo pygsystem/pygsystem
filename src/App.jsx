@@ -38,7 +38,7 @@ import {
 } from "react-icons/fa";
 
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -51,6 +51,7 @@ import "swiper/css/pagination";
 export default function MultiserviciosPyGSystem() {
 
   const form = useRef();
+  const [selectedService, setSelectedService] = useState(null);
   const sendEmail = (e) => {
   e.preventDefault();
 
@@ -234,7 +235,7 @@ const brands = [
           <img
             src={item.image}
             alt={item.title}
-            className="h-[250px] w-full object-cover"
+            className="h-[250px] w-full object-contain bg-slate-100"
           />
 
           <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center font-bold p-6 px-4 text-3xl leading-tight min-h-[120px] flex items-center justify-center">
@@ -298,7 +299,11 @@ const brands = [
 
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-[20px] overflow-hidden shadow-md border border-[#e6eaf0] hover:-translate-y-3 hover:shadow-2xl transition-all duration-300">
+              <div
+  key={index}
+  onClick={() => setSelectedService(service)}
+  className="bg-white rounded-[20px] overflow-hidden shadow-md border border-[#e6eaf0] hover:-translate-y-3 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+>
                 <img
   src={service.image}
   alt={service.title}
@@ -433,6 +438,49 @@ const brands = [
   ))}
 </Swiper>
         </section>
+        {selectedService && (
+  <div onClick={() => setSelectedService(null)}
+   className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+    
+
+    <div onClick={(e) => e.stopPropagation()} 
+    className="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative animate-fadeIn">
+
+      {/* Botón cerrar */}
+      <button
+        onClick={() => setSelectedService(null)}
+        className="absolute top-4 right-4 bg-red-500 hover:bg-red-600 text-white w-10 h-10 rounded-full text-2xl font-bold z-10"
+      >
+        ×
+      </button>
+
+      {/* Imagen */}
+      <img
+        src={selectedService.image}
+        alt={selectedService.title}
+        className="w-full h-[250px] md:h-[400px] object-contain bg-slate-100"
+      />
+
+      {/* Contenido */}
+      <div className="p-6 md:p-10">
+
+        <h2 className="text-2xl md:text-4xl font-extrabold text-blue-700 mb-6">
+          {selectedService.title}
+        </h2>
+
+        <ul className="space-y-4 text-base md:text-xl text-slate-700 leading-relaxed">
+          {selectedService.items.map((item, idx) => (
+            <li key={idx} className="flex gap-3">
+              <span className="text-blue-700 font-bold">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+      </div>
+    </div>
+  </div>
+)}
       </main>
 
       <footer className="bg-[#003f7d] text-white pt-14 pb-10 mt-10">
