@@ -253,6 +253,7 @@ const brands = [
               <h4 className="text-blue-700 uppercase font-bold tracking-widest mb-4">Nosotros</h4>
               <h2 className="text-4xl md:text-6xl font-extrabold mb-8 text-[#1f2d3d]">¿Quiénes somos?</h2>
               <div className="w-20 h-1 bg-blue-700 mb-8 rounded-full"></div>
+              <div className="w-full overflow-hidden"></div>
 
               <p className="text-lg md:text-2xl text-slate-600 leading-relaxed break-words">
                 Somos una empresa dedicada a dar soluciones en el rubro de TIC, con los mejores estándares para el diseño e implementación de proyectos en empresas, edificaciones , entidades públicas y privadas, nuestro personal 
