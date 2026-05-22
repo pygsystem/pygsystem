@@ -12,7 +12,7 @@ import servicio3 from "./assets/servicio3.webp";
 import servicio4 from "./assets/servicio4.png";
 import servicio5 from "./assets/servicio5.jpg";
 import servicio6 from "./assets/servicio6.png";
-import servicio7 from "./assets/servicio6.png";
+import servicio7 from "./assets/servicio7.png";
 import servicios from "./assets/servicios.png";
 
 import hikvision from "./assets/hikvision.png";
